@@ -35,7 +35,6 @@ func main() {
 	format :=  flag.String("format", "string", "Events Format; ex string,json,avro")
 	verbose := flag.Bool("verbose", false, "Verbose Mode; It Prints Events consumed")
 	balancer := flag.String("balancer", "hash", "Balance algorithm for producer mode; Ex: hash,murmur2,crc32")
-	sleep := flag.Int("sleep", 1, "Balance algorithm for producer mode; Ex: hash,murmur2,crc32")
 
 	flag.Parse()
 
@@ -98,7 +97,7 @@ func produce(bootstrapServers string, topic string, events int, size int, batchS
 				fmt.Printf("Sent %v messages to topic %s with %v errors \n", executions, topic, errors)
 			}
 
-			time.Sleep(sleep * time.Second)
+			time.Sleep(1 * time.Second)
 
 			wg.Done()
 		}()
