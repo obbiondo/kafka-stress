@@ -35,7 +35,7 @@ func main() {
 	format :=  flag.String("format", "string", "Events Format; ex string,json,avro")
 	verbose := flag.Bool("verbose", false, "Verbose Mode; It Prints Events consumed")
 	balancer := flag.String("balancer", "hash", "Balance algorithm for producer mode; Ex: hash,murmur2,crc32")
-	sleep := flag.String("sleep", 1, "Balance algorithm for producer mode; Ex: hash,murmur2,crc32")
+	sleep := flag.Int("sleep", 1, "Balance algorithm for producer mode; Ex: hash,murmur2,crc32")
 
 	flag.Parse()
 
